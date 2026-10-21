@@ -1,0 +1,47 @@
+﻿@page
+@model WebApplication1.Pages.DefaultDescription.IndexModel
+@{
+}
+<h2>مدیریت شرح‌های پیش‌فرض</h2>
+
+<p>
+    <a asp-page="/DefaultDescription/Create" class="btn btn-primary">
+        ایجاد رکورد جدید
+    </a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>شناسه</th>
+            <th>مالک</th>
+            <th>نام</th>
+            <th>کد</th>
+            <th>عملیات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Owner</td>
+                <td>@item.Name</td>
+                <td>@item.Code</td>
+                <td>
+                    <a asp-page="/DefaultDescription/Details"
+                       asp-route-id="@item.Id"
+                       class="btn btn-info btn-sm">جزئیات</a>
+
+                    <a asp-page="/DefaultDescription/Edit"
+                       asp-route-id="@item.Id"
+                       class="btn btn-warning btn-sm">ویرایش</a>
+
+                    <a asp-page-handler="Delete"
+                       asp-route-code="@item.Code"
+                       class="btn btn-danger btn-sm">حذف</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

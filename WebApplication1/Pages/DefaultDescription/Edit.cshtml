@@ -1,0 +1,38 @@
+﻿@page "{id:int}"
+@model WebApplication1.Pages.DefaultDescription.EditModel
+
+<h2>ویرایش شرح پیش‌فرض</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Input.Id" />
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Owner" class="form-label">مالک</label>
+        <input asp-for="Input.Owner" class="form-control" />
+        <span asp-validation-for="Input.Owner" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Name" class="form-label">نام</label>
+        <input asp-for="Input.Name" class="form-control" />
+        <span asp-validation-for="Input.Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Input.Code" class="form-label">کد</label>
+        <input asp-for="Input.Code" class="form-control" />
+        <span asp-validation-for="Input.Code" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">ذخیره تغییرات</button>
+
+    <a asp-page="/DefaultDescription/Index" class="btn btn-secondary">
+        انصراف
+    </a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
