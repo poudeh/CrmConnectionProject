@@ -1,5 +1,5 @@
 ﻿@page "{id:int}"
-@model WebApplication1.Pages.DefaultDescription.DetailsModel
+@model WebApplication1.Pages.WarehouseLocation.DetailsModel
 
 <h2>جزئیات شرح پیش‌فرض</h2>
 
@@ -20,10 +20,10 @@
     </dl>
 }
 
-<a asp-page="/DefaultDescription/Edit"
+<a asp-page="/WarehouseLocation/Edit"
    asp-route-id="@Model.Item?.Id"
    class="btn btn-warning">ویرایش</a>
 
-<a asp-page="/DefaultDescription/Index" class="btn btn-secondary">
+<a asp-page="/WarehouseLocation/Index" class="btn btn-secondary">
     بازگشت به لیست
 </a>

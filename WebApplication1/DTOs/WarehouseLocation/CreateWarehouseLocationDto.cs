@@ -1,6 +1,6 @@
-﻿namespace WebApplication1.DTOs.DefaultDescription
+﻿namespace WebApplication1.DTOs.WarehouseLocation
 {
-    public class CreateDefaultDescriptionDto
+    public class CreateWarehouseLocationDto
     {
         public string Owner { get; set; }
         public string Name { get; set; }

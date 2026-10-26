@@ -9,14 +9,15 @@ namespace WebApplication1.Infrastructure
         {
         }
 
-        public DbSet<DefaultDescription> DefaultDescriptions { get; set; }
+        public DbSet<WarehouseLocation> WarehouseLocations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<DefaultDescription>(entity =>
+            modelBuilder.Entity<WarehouseLocation>(entity =>
             {
+                entity.ToTable("WarehouseLocations");
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Owner).HasMaxLength(255);
                 entity.Property(e => e.Name).HasMaxLength(255);

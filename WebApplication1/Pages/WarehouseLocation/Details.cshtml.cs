@@ -1,21 +1,21 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using WebApplication1.DTOs.DefaultDescription;
+using WebApplication1.DTOs.WarehouseLocation;
 using WebApplication1.Services;
 
-namespace WebApplication1.Pages.DefaultDescription
+namespace WebApplication1.Pages.WarehouseLocation
 {
     public class DetailsModel : PageModel
     {
-        private readonly IDefaultDescriptionService _service;
+        private readonly IWarehouseLocationservice _service;
 
-        public DetailsModel(IDefaultDescriptionService service)
+        public DetailsModel(IWarehouseLocationservice service)
         {
             _service = service;
         }
 
-        public DefaultDescriptionViewModel? Item { get; set; }
+        public WarehouseLocationViewModel? Item { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int id)
         {

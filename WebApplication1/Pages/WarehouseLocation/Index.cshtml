@@ -1,11 +1,11 @@
 ﻿@page
-@model WebApplication1.Pages.DefaultDescription.IndexModel
+@model IndexModel
 @{
 }
 <h2>مدیریت شرح‌های پیش‌فرض</h2>
 
 <p>
-    <a asp-page="/DefaultDescription/Create" class="btn btn-primary">
+    <a asp-page="/WarehouseLocation/Create" class="btn btn-primary">
         ایجاد رکورد جدید
     </a>
 </p>
@@ -29,13 +29,17 @@
                 <td>@item.Name</td>
                 <td>@item.Code</td>
                 <td>
-                    <a asp-page="/DefaultDescription/Details"
+                    <a asp-page="/WarehouseLocation/Details"
                        asp-route-id="@item.Id"
                        class="btn btn-info btn-sm">جزئیات</a>
 
-                    <a asp-page="/DefaultDescription/Edit"
+                    <a asp-page="/WarehouseLocation/Edit"
                        asp-route-id="@item.Id"
                        class="btn btn-warning btn-sm">ویرایش</a>
+                    
+                    <a asp-page="/WarehouseLocation/DirectCrmEdit"
+                       asp-route-code="@item.Code"
+                       class="btn btn-warning btn-sm">ویرایش مستقیم</a>
 
                     <a asp-page-handler="Delete"
                        asp-route-code="@item.Code"

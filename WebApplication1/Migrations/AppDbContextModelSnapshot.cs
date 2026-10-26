@@ -21,7 +21,7 @@ namespace WebApplication1.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("WebApplication1.Domain.DefaultDescription", b =>
+            modelBuilder.Entity("WebApplication1.Domain.WarehouseLocation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -46,7 +46,7 @@ namespace WebApplication1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DefaultDescriptions");
+                    b.ToTable("WarehouseLocations", (string)null);
                 });
 #pragma warning restore 612, 618
         }

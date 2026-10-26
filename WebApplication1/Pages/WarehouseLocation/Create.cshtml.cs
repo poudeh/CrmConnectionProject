@@ -1,21 +1,21 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using WebApplication1.DTOs.DefaultDescription;
+using WebApplication1.DTOs.WarehouseLocation;
 using WebApplication1.Services;
 
-namespace WebApplication1.Pages.DefaultDescription
+namespace WebApplication1.Pages.WarehouseLocation
 {
     public class CreateModel : PageModel
     {
-        private readonly IDefaultDescriptionService _service;
+        private readonly IWarehouseLocationservice _service;
 
-        public CreateModel(IDefaultDescriptionService service)
+        public CreateModel(IWarehouseLocationservice service)
         {
             _service = service;
         }
 
         [BindProperty]
-        public CreateDefaultDescriptionDto Input { get; set; } = new();
+        public CreateWarehouseLocationDto Input { get; set; } = new();
 
         public void OnGet()
         {
@@ -28,7 +28,7 @@ namespace WebApplication1.Pages.DefaultDescription
 
             await _service.CreateAsync(Input);
 
-            return RedirectToPage("/DefaultDescription/Index");
+            return RedirectToPage("/WarehouseLocation/Index");
         }
     }
 }
